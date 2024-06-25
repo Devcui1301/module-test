@@ -51,6 +51,19 @@ publishing {
     }
 }
 
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                from (components["release"])
+                groupId = "com.github.Devcui1301"
+                artifactId = "module-test"
+                version = "1.0.1"
+            }
+        }
+    }
+}
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
